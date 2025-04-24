@@ -7,7 +7,7 @@ import GHC.IO (IO(..))
 data PromptTag a = PT (PromptTag# a)
 
 newPromptTag :: IO (PromptTag a)
-newPromptTag = IO \s -> let (# s', tag# #) = newPromptTag# s in (# s', PT tag# #)
+newPromptTag = IO \s -> let !(# s', tag# #) = newPromptTag# s in (# s', PT tag# #)
 
 prompt :: forall a. PromptTag a -> IO a -> IO a
 prompt (PT tag#) act = coerce (prompt# @a tag#) act
