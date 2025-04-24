@@ -23,7 +23,7 @@ name:               scoped-value-hs
 version:            0.1.0.0
 
 -- A short (one-line) description of the package.
--- synopsis:
+synopsis: implementation of scoped values inspired by JEP487
 
 -- A longer description of the package.
 -- description:
